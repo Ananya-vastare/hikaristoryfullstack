@@ -174,6 +174,15 @@ Vercel
 Netlify  
 
 ---
+##  Impact & SDG Alignment
 
+HikariStoryBoard aligns with the following UN Sustainable Development Goals:
 
-Built during GenAI Zürich Hackathon 2026
+- **Quality Education** – Enhances learning through AI-generated visual storytelling  
+- **Industry, Innovation and Infrastructure** – Demonstrates real-world applications of Generative AI  
+- **Reduced Inequalities** – Makes creative storytelling accessible to everyone  
+
+Additionally, it contributes to:
+
+- **Decent Work and Economic Growth** – Supports creators with faster content generation  
+- **Responsible Consumption and Production** – Encourages efficient digital-first creation workflows  
