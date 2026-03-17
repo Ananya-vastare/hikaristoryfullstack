@@ -1,75 +1,117 @@
-# React + TypeScript + Vite
+# 🎬 HikariStoryBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HikariStoryBoard is a GenAI-powered storytelling platform that transforms simple text prompts into cinematic comic-style storyboards with consistent characters, narrative flow, and AI-generated visuals.
 
-Currently, two official plugins are available:
+Built for the **GenAI Zürich Hackathon 2026**, this project demonstrates how large language models and diffusion models can work together to create structured visual storytelling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Frontend
+- React + TypeScript (Vite)
+- Custom hooks for API handling
+- Responsive UI for storyboard visualization
 
-Note: This will impact Vite dev & build performances.
+### Backend
+- Flask (deployed on Vercel serverless)
+- Google Gemini (story generation)
+- Hugging Face (image generation - Stable Diffusion XL)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧠 Core Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ✍️ Prompt → Story (LLM-based narrative generation)
+- 🎭 Character Consistency across panels
+- 🎨 AI-generated cinematic comic visuals
+- 💬 Speech bubble rendering on images
+- ⚡ Real-time API interaction with loading + error handling
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Development Setup
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Clone the repo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Install dependencies
+   ````
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3. Run locally
+````
+npm run dev
+
+Frontend runs on:
+`````
+http://localhost:5173
+
+### 4. Build for production
+ ````
+npm run build
+
+### Deployment
+Frontend
+Hosted on Netlify
+
+Backend
+Hosted on Vercel (serverless Flask API)
+
+Add:
+ACCESS_TOKEN=your_huggingface_key
+GEMINI_API_KEY=your_gemini_key
+🧩 Project Structure
+/frontend
+  /src
+    hooks/useApi.ts
+    components/
+    pages/
+
+backend (vercel)
+/api
+  index.py
+Notes
+
+Vercel serverless functions have execution limits (important for image generation)
+
+Ensure correct API routes (/output or /api/output)
+
+Always redeploy frontend after API changes
+
+### Future Improvements
+
+Streaming responses for faster UX
+
+Multi-character storytelling
+
+Style selection (anime, noir, watercolor)
+
+Story editing + panel regeneration
+
+Export as PDF / comic strip
+
+### Built With
+React
+TypeScript
+Flask
+
+Google Gemini API
+
+Hugging Face Inference API
+
+Vercel
+
+Netlify
+
+Team
+
+Built during GenAI Zürich Hackathon 2026
+
+---
+
+
+
+
+```bash
+git clone <your-repo-url>
+cd hikaristoryboard
