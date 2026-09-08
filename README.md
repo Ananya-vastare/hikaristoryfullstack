@@ -33,7 +33,7 @@ HikariStoryBoard bridges the gap between imagination and visual creation using G
 ##  Tech Stack
 
 Frontend:
-- React + JavaScript (Vite)
+- React + TypeScript (Vite)
 
 Backend:
 - Flask (Vercel serverless)
